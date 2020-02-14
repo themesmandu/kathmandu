@@ -176,33 +176,14 @@ function kathmandu_scripts() {
 	// Theme styles.
 	wp_enqueue_style( 'kathmandu-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
-	// Loading player main stylesheet.
-	wp_enqueue_style( 'player-main', get_theme_file_uri( '/assets/player/css/player.min.css' ), array( 'kathmandu-style' ), wp_get_theme()->get( 'Version' ) );
-
 	// Loading menu dropdown stylesheet.
 	wp_enqueue_style( 'menu-dropdown', get_theme_file_uri( '/assets/css/dropdown.min.css' ), array( 'kathmandu-style' ), wp_get_theme()->get( 'Version' ) );
 
 	// Loading main stylesheet.
 	wp_enqueue_style( 'main', get_theme_file_uri( '/assets/css/main.min.css' ), array( 'kathmandu-style' ), wp_get_theme()->get( 'Version' ) );
 
-	// Loading Custom Image Slider stylesheet.
-	wp_enqueue_style( 'custom-image-slider', get_theme_file_uri( '/assets/css/custom-image-slider.min.css' ), array(), wp_get_theme()->get( 'Version' ) );
-
-	// Loading contact form seven stylesheet.
-	wp_enqueue_style( 'cf7', get_theme_file_uri( '/assets/css/contact-seven.min.css' ), array( 'kathmandu-style' ), wp_get_theme()->get( 'Version' ) );
-
-	if ( class_exists( 'Easy_Digital_Downloads' ) ) {
-		// Loading edd custom stylesheet.
-		wp_enqueue_style( 'edd-custom', get_theme_file_uri( '/assets/css/edd-styles.min.css' ), array( 'kathmandu-style' ), wp_get_theme()->get( 'Version' ) );
-	}
-
 	// Loading mediascreen stylesheet.
 	wp_enqueue_style( 'mediascreen', get_theme_file_uri( '/assets/css/mediascreen.min.css' ), array( 'kathmandu-style' ), wp_get_theme()->get( 'Version' ) );
-
-	// Loading player dropdown stylesheet.
-	if ( get_theme_mod( 'kathmandu_player_atc_style', 'dropdown' ) === 'dropdown' ) {
-		wp_enqueue_style( 'player-cart-dropdown', get_theme_file_uri( '/assets/css/player-dropdown.min.css' ), array( 'kathmandu-style' ), wp_get_theme()->get( 'Version' ) );
-	}
 
 	// Add font-awesome fonts, used in the main stylesheet.
 	wp_enqueue_style( 'kathmandu-font-awesome', get_theme_file_uri( '/assets/font-awesome-5.7.2/css/all.css' ), array( 'kathmandu-style' ), '5.7.2' );
@@ -218,56 +199,11 @@ function kathmandu_scripts() {
 	// Theme added JavaScript: Added by Developers.
 	wp_enqueue_script( 'kathmandu-global', get_template_directory_uri() . '/assets/js/global.min.js', array(), wp_get_theme()->get( 'Version' ), true );
 
-	if ( is_front_page() && ! is_home() && get_theme_mod( 'slider_toggle' ) ) {
-		// jQuery of custom image slider
-		wp_enqueue_script( 'slider-script-js', get_theme_file_uri( '/assets/js/wizslider.min.js' ), array(), wp_get_theme()->get( 'Version' ), true );
-	}
-
-	// Theme added JavaScript: Added by Developers for Contact Form Seven
-	wp_enqueue_script( 'kathmandu-contact-f7', get_template_directory_uri() . '/assets/js/contact-seven.min.js', array(), wp_get_theme()->get( 'Version' ), true );
-
-	// Theme added JavaScript: Added by Developers.
-	wp_enqueue_script( 'kathmandu-pricing-table', get_template_directory_uri() . '/assets/js/pricing-table.min.js', array(), wp_get_theme()->get( 'Version' ), true );
-
-	// Theme added JavaScript: Added by Developers For Slick Slider.
-	wp_enqueue_script( 'kathmandu-slick-slide', get_template_directory_uri() . '/assets/js/slick.min.js', array(), wp_get_theme()->get( 'Version' ), true );
-
-	if ( is_front_page() && ! is_customize_preview() && ! get_theme_mod( 'kathmandu_external_store' ) ) {
-			// Player js.
-			wp_enqueue_script( 'kathmandu-player', get_template_directory_uri() . '/assets/player/js/player.min.js', array(), wp_get_theme()->get( 'Version' ), true );
-			// Player slide js.
-			wp_enqueue_script( 'kathmandu-player-slider', get_template_directory_uri() . '/assets/player/js/slider.min.js', array(), wp_get_theme()->get( 'Version' ), true );
-	}
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'kathmandu_scripts' );
-
-
-if ( get_theme_mod( 'pricing_table_css' ) ) {
-	// check for plugin using plugin name.
-	require_once ABSPATH . 'wp-admin/includes/plugin.php';
-	if ( is_plugin_active( 'dk-pricr-responsive-pricing-table/rpt.php' ) ) {
-		/**
-		 * Enqueue styles to override last.
-		 */
-		function kathmandu_override_plugin_styles() {
-			// Rpt css to overide plugin's css.
-			wp_enqueue_style( 'pricing-styles', get_template_directory_uri() . '/assets/css/pricing-styles.min.css', array( 'kathmandu-style' ), wp_get_theme()->get( 'Version' ) );
-		}
-		add_action( 'wp_enqueue_scripts', 'kathmandu_override_plugin_styles', 100 );
-	}
-}
-
-if ( get_theme_mod( 'testimonial_css' ) ) {
-	function kathmandu_override_plugin_testinomial_styles() {
-		// Rpt css to overide plugin's css.
-		wp_enqueue_style( 'testinomial-styles', get_template_directory_uri() . '/assets/css/strong-testinomial.min.css', array( 'kathmandu-style' ), wp_get_theme()->get( 'Version' ) );
-	}
-	add_action( 'wp_footer', 'kathmandu_override_plugin_testinomial_styles' );
-}
 
 
 
