@@ -106,40 +106,6 @@ if ( ! function_exists( 'kathmandu_get_theme_option' ) ) :
 
 endif;
 
-/**
- * Add extra items in menu
- *
- * @since 1.0.0
- *
- * @param array $items item to b added.
- * @param object $args args object.
- */
-
-function kathmandu_add_menu_item( $items, $args ) {
-	if ( class_exists( 'Easy_Digital_Downloads' ) ) {
-		if ( 'primary' === $args->theme_location ) {
-			ob_start();
-			the_widget( 'edd_cart_widget' );
-			$widget = ob_get_clean();
-			$items .= '<li class="kathmandu_cart menu-item">
-		<button class="btn-cart btn-kathmandu">
-			<p><i class="fas fa-shopping-cart"></i> <span
-					class="cart-count edd-cart-quantity">' . edd_get_cart_quantity() . '</span> kathmandu</p>
-		</button>
-
-		<div class="cart_content">
-			<div class="cart-wrap">' . $widget . '</div>
-		</div>
-	</li>';
-
-		}
-	}
-	return $items;
-}
-if ( get_theme_mod( 'mainmenu_cart_toggle', true ) ) {
-	add_filter( 'wp_nav_menu_items', 'kathmandu_add_menu_item', 10, 2 );
-}
-
 
 
 function kathmandu_get_duration( $file ) {
