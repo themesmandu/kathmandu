@@ -1,0 +1,80 @@
+/* -- CUstomizer Styles -- */
+
+.customize-control {
+    margin-bottom: 28px;
+}
+
+#customize-control-kathmandu_player_color_start,
+#customize-control-kathmandu_player_navbar_bg,
+#customize-control-kathmandu_player_navbar_text_color,
+#customize-control-kathmandu_player_navbar_btn_color,
+#customize-control-kathmandu_player_navbar_btn_text_color,
+#customize-control-kathmandu_player_bg,
+#customize-control-kathmandu_player_text_color,
+#customize-control-kathmandu_player_btn_assets,
+#customize-control-kathmandu_player_btn_text_color,
+#customize-control-kathmandu_player_btn_added,
+#customize-control-kathmandu_player_btn_added_text_color,
+#customize-control-kathmandu_player_now_playing_bg,
+#customize-control-now_playing_text_color,
+#customize-control-kathmandu_player_shared_bg_color,
+#customize-control-now_playing_btn_color,
+#customize-control-now_playing_btn_text_color,
+#customize-control-kathmandu_player_shared_btn_color,
+#customize-control-kathmandu_player_shared_btn_text_color {
+    margin-bottom: 12px;
+}
+
+#sub-accordion-section-colors .customize-control {
+    margin-bottom: 12px;
+}
+
+#customize-control-kathmandu_theme_options-slider_animations ul {
+    column-count: 3;
+}
+
+#customize-control-kathmandu_player_color_start {
+    margin: 0;
+}
+
+.wp-color-result-text {
+    line-height: 2.36363636 !important;
+}
+
+.wp-picker-container .wp-color-result.button {
+    min-height: 28px;
+}
+
+.wp-picker-container .wp-color-result.button .color-alpha {
+    height: 26px !important;
+}
+
+.customize-control-kirki-radio-image > .image {
+    flex-wrap: nowrap;
+    margin: 0 -10px;
+}
+
+.customize-control-kirki-radio-image .sidebar_positionleft,
+.customize-control-kirki-radio-image .sidebar_positionnone,
+.customize-control-kirki-radio-image .sidebar_positionright,
+.customize-control-kirki-radio-image .mainmenu_dropdown_modedefault,
+.customize-control-kirki-radio-image .mainmenu_dropdown_modebootstrap,
+.customize-control-kirki-radio-image .blog_pagination_modestandard,
+.customize-control-kirki-radio-image .blog_pagination_modenumeric,
+.customize-control-kirki-radio-image .blog_layoutstandard,
+.customize-control-kirki-radio-image .blog_layoutlist {
+    padding: 0 10px;
+}
+
+.customize-control-kirki-radio-image input + label img {
+    transition: .2s ease-in-out;
+    border: 2px solid transparent;
+}
+
+.customize-control-kirki-radio-image input:checked + label img {
+    border: 2px solid #00a0d2;
+}
+
+.customize-control-kirki-toggle input:checked + .switch:after {
+    background: #00a0d2;
+}
