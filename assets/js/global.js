@@ -31,9 +31,7 @@ jQuery(document).ready(function ($) {
     // Added class on dropdown menu span
 
     if ($(document).width() < 1200) {
-        var $menu_item = $('.menu-item-has-children');
-
-        $menu_item.append('<span class="caret"></span>');
+        $('.main-navigation .menu-item-has-children').append('<span class="caret"></span>');
 
         $('.caret').click(function () {
             $(this).parent().toggleClass('menu-open').siblings().removeClass('menu-open');
